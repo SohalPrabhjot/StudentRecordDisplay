@@ -1,0 +1,49 @@
+<html t:type="layout" title="studentRecord Index"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+>
+
+<div class="row">
+    <h1 style="color:grey; font-family: verdana;">Class: ${studentName}</h1>
+    <div class="span5">
+        <table class="table table-hover table-bordered table-striped">
+            <tr>
+                <th>Subject</th>
+                <th>Marks Obtained</th>
+                <th>Total</th>
+            </tr>
+
+            <t:loop t:source="subjects" t:value="subject">
+                <tr>
+                    <td>${subject.name}</td>
+                    <td>${subject.marks}</td>
+                    <td>50</td>
+                </tr>
+            </t:loop>
+        </table>
+    </div>
+</div>
+
+<t:if test="showOlympiadSubject">
+<div class="row">
+    <h2 style="color:grey; font-family: verdana;">OlympiadResult</h2>
+    <div class="span5">
+        <table class="table table-hover table-bordered table-striped">
+            <tr>
+                <th>Subject</th>
+                <th>Marks</th>
+                <th>Total</th>
+            </tr>
+
+            <t:loop t:source="olympiadSubjects" t:value="olympiadSubject">
+                <tr>
+                    <td>${olympiadSubject.name}</td>
+                    <td>${olympiadSubject.marks}</td>
+                    <td>50</td>
+                </tr>
+            </t:loop>
+        </table>
+    </div>
+</div>
+</t:if>
+
+</html>

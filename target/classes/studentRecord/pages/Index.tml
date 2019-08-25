@@ -1,0 +1,32 @@
+<html t:type="layout" title="studentRecord Index"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+        >
+
+<div class="row">
+    <h1 style="color:grey; font-family: verdana;">Students Record</h1>
+    <div class="span10">
+        <table class="table table-hover table-bordered table-striped">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Class</th>
+                <th>Sub-Total</th>
+            </tr>
+
+            <t:loop t:source="students" t:value="student">
+                <tr>
+                    <td>${student.id}</td>
+                    <td>${student.name}</td>
+                    <td>${student.age}</td>
+                    <td>${student.studentclass}</td>
+                    <td>${student.marks_obtained} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <t:pagelink page="marksView" context="student.id">MarksView</t:pagelink>
+                    </td>
+                </tr>
+            </t:loop>
+        </table>
+    </div>
+</div>
+
+</html>
